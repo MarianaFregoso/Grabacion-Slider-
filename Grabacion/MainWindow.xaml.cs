@@ -65,13 +65,17 @@ namespace Grabacion
             for (int i=0; i < bytesGrabados; i+=2)
             {
                 short muestra = (short)(buffer[i + 1] << 8 | buffer[i]);
-                //lblmuestras.TextInput = muestra.ToString();
-                //slbvolumen.Value = muestra;
-                acumulador += muestra;
-                nummuestras++;
+
+                float muestra32bits = (float)muestra / 32768.0f;
+
+                slbvolumen.Value = Math.Abs(muestra32bits);
+                
+
+               // acumulador += muestra;
+                //nummuestras++;
             }
             double promedio = acumulador / nummuestras;
-            slbvolumen.Value = promedio;
+            //slbvolumen.Value = promedio;
 
             //writer.Write(buffer, 0, bytesGrabados);
         }
