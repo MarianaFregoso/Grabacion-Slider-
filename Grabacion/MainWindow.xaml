@@ -21,6 +21,8 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
+        <TextBlock x:Name="lblfrecuencia" HorizontalAlignment="Left" Margin="39,96,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="27" Width="295" FontSize="24"/>
+        <TextBlock x:Name="lbltono" HorizontalAlignment="Left" Margin="39,160,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="36" Width="281"/>
 
     </Grid>
 </Window>

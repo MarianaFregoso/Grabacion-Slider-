@@ -93,7 +93,7 @@ namespace Grabacion
 
                 float muestra32bits = (float)muestra / 32768.0f;
                 slbvolumen.Value = Math.Abs(muestra32bits);
-                if (1 / 2 < numeroMuestrasComplejas)
+                if (i / 2 < numeroMuestrasComplejas)
                 {
                     muestrasComplejas[i / 2].X = muestra32bits;
                 }
@@ -119,8 +119,22 @@ namespace Grabacion
             int indiceMaximo =
                 valoresAbsolutos.ToList().IndexOf(
                     valoresAbsolutos.Max());
+            float frecuenciaFundamental =
+                (float)(indiceMaximo * wavein.WaveFormat.SampleRate) / 
+                (float) valoresAbsolutos.Length;
+            lblfrecuencia.Text = frecuenciaFundamental.ToString();
 
-        }
+            
+            
+
+
+
+
+
+
+
+
+    }
 
         private void btnfinalizar_Click(object sender, RoutedEventArgs e)
         {
